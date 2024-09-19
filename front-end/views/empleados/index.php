@@ -14,11 +14,13 @@ $empleados = $empleadosController->index();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de empleados</title>
     <link rel="stylesheet" href="/empresa/front-end/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Empleados</h1>
-
-    <table border="1">
+<div class="container">
+        <h1>Lista de Empleados</h1>
+        <!-- Aquí va el contenido -->
+        <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -38,13 +40,16 @@ $empleados = $empleadosController->index();
                     <td><?php echo $empleado['telefono']; ?></td>
                     <td><?php echo $empleado['cargo']; ?></td>
                     <td>
-                        <a href="show.php?id=<?php echo $empleado['id']; ?>">Ver</a>
-                        <a href="edit.php?id=<?php echo $empleado['id']; ?>">Editar</a>
-                        <a href="delete.php?id=<?php echo $empleado['id']; ?>">Eliminar</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+                            <a href="show.php?id=<?php echo $empleado['id']; ?>" class="btn btn-view">Ver</a>
+                            <a href="edit.php?id=<?php echo $empleado['id']; ?>" class="btn btn-edit">Editar</a>
+                            <a href="delete.php?id=<?php echo $empleado['id']; ?>" class="btn btn-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
     </table>
+
+    </div>
+ 
 </body>
 </html>

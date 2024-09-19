@@ -14,37 +14,40 @@ $ventas = $ventasController->index();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Ventas</title>
     <link rel="stylesheet" href="/empresa/front-end/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Ventas</h1>
+    <div class="container">
+        <h1>Lista de Ventas</h1>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Total</th>
-                <th>Cliente ID</th>
-                <th>Empleado ID</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($ventas as $venta) : ?>
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo $venta['id']; ?></td>
-                    <td><?php echo $venta['fecha']; ?></td>
-                    <td><?php echo $venta['total']; ?></td>
-                    <td><?php echo $venta['clientes_id']; ?></td>
-                    <td><?php echo $venta['empleado_id']; ?></td>
-                    <td>
-                        <a href="show.php?id=<?php echo $venta['id']; ?>">Ver</a>
-                        <a href="edit.php?id=<?php echo $venta['id']; ?>">Editar</a>
-                        <a href="delete.php?id=<?php echo $venta['id']; ?>">Eliminar</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Cliente ID</th>
+                    <th>Empleado ID</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($ventas as $venta) : ?>
+                    <tr>
+                        <td><?php echo $venta['id']; ?></td>
+                        <td><?php echo $venta['fecha']; ?></td>
+                        <td><?php echo $venta['total']; ?></td>
+                        <td><?php echo $venta['clientes_id']; ?></td>
+                        <td><?php echo $venta['empleado_id']; ?></td>
+                        <td>
+                            <a href="show.php?id=<?php echo $venta['id']; ?>" class="btn btn-view">Ver</a>
+                            <a href="edit.php?id=<?php echo $venta['id']; ?>" class="btn btn-edit">Editar</a>
+                            <a href="delete.php?id=<?php echo $venta['id']; ?>" class="btn btn-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
