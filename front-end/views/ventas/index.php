@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/empresa/back-end/controladores/ventas
 // Obtener todas las ventas
 $ventasController = new VentasController();
 $ventas = $ventasController->index();
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,12 @@ $ventas = $ventasController->index();
                         <td>
                             <a href="show.php?id=<?php echo $venta['id']; ?>" class="btn btn-view">Ver</a>
                             <a href="edit.php?id=<?php echo $venta['id']; ?>" class="btn btn-edit">Editar</a>
-                            <a href="delete.php?id=<?php echo $venta['id']; ?>" class="btn btn-delete">Eliminar</a>
+                            
+                            <!-- Formulario para eliminar la venta -->
+                            <form action="delete.php" method="POST" style="display:inline;">
+                                <input type="hidden" name="id" value="<?php echo $venta['id']; ?>">
+                                <button type="submit" class="btn btn-delete">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
