@@ -41,14 +41,17 @@ $productos = $productosController->index();
                     <td>
                             <a href="show.php?id=<?php echo $producto['id']; ?>" class="btn btn-view">Ver</a>
                             <a href="edit.php?id=<?php echo $producto['id']; ?>" class="btn btn-edit">Editar</a>
-                            <a href="delete.php?id=<?php echo $producto['id']; ?>" class="btn btn-delete">Eliminar</a>
+
+                        <!-- Formulario para eliminar los productos -->
+                            <form action="delete.php" method="POST" style="display:inline;">
+                            <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
+                            <button type="submit" class="btn btn-delete">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
     </table>
     </div>
-
-    
 </body>
 </html>
