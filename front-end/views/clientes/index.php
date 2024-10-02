@@ -41,7 +41,11 @@ $clientes = $clienteController->index();
                     <td>
                             <a href="show.php?id=<?php echo $cliente['id']; ?>" class="btn btn-view">Ver</a>
                             <a href="edit.php?id=<?php echo $cliente['id']; ?>" class="btn btn-edit">Editar</a>
-                            <a href="delete.php?id=<?php echo $cliente['id']; ?>" class="btn btn-delete">Eliminar</a>
+                                                   <!-- Formulario para eliminar los clientes -->
+                                                   <form action="delete.php" method="POST" style="display:inline;">
+                            <input type="hidden" name="id" value="<?php echo $cliente['id']; ?>">
+                            <button type="submit" class="btn btn-delete">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
