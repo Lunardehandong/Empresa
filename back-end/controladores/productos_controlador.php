@@ -43,5 +43,13 @@ class ProductosController {
         $producto = new Productos();
         return $producto->delete($id);
     }
+
+    // Obtener todos los empleados para el reporte
+    public function reporte() {
+        $producto = new Productos();
+        return $producto->getAll(); // Función que trae todos los empleados desde el modelo
+    }
+
+
 }
 ?>

@@ -43,5 +43,16 @@ class EmpleadosController {
         $empleado = new Empleados();
         return $empleado->delete($id);
     }
+
+    // Obtener todos los empleados para el reporte
+    public function reporte() {
+        $empleado = new Empleados();
+        return $empleado->getAll(); // Función que trae todos los empleados desde el modelo
+    }
+
+
+
+
+
 }
 ?>

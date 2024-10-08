@@ -41,5 +41,11 @@ class ClientesController {
         $cliente = new Clientes();
         return $cliente->delete($id);
     }
+
+        // Obtener todos los empleados para el reporte
+        public function reporte() {
+            $cliente = new Clientes();
+            return $cliente->getAll(); // Función que trae todos los empleados desde el modelo
+        }
 }
 ?>

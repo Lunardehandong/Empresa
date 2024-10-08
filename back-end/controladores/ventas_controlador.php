@@ -43,5 +43,11 @@ class VentasController {
         $venta = new Ventas();
         return $venta->delete($id);
     }
+
+        // Obtener todos los empleados para el reporte
+        public function reporte() {
+            $venta = new Ventas();
+            return $venta->getAll(); // Función que trae todos los empleados desde el modelo
+        }
 }
 ?>
