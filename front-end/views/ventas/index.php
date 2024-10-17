@@ -21,6 +21,13 @@ $ventas = $ventasController->index();
     <div class="container">
         <h1>Lista de Ventas</h1>
 
+
+            <!-- Botones de Crear y Reporte -->
+    <div class="button-group">
+        <a href="create.php" class="btn btn-create">Crear Producto</a>
+        <a href="report.php" class="btn btn-report">Generar Reporte</a>
+    </div>
+
         <table>
             <thead>
                 <tr>
