@@ -1,5 +1,4 @@
 <?php
-
 include_once $_SERVER['DOCUMENT_ROOT'] . "/empresa/back-end/basedatos/db_config.php";
 
 class Usuarios {
@@ -9,7 +8,7 @@ class Usuarios {
     public $id;
     public $nombre;
     public $correo;
-    public $password; // Mantener esto si lo necesitas
+    public $password;
 
     public function __construct() {
         $dbConfig = new DBConfig();
